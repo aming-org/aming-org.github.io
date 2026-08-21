@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "stats": "node scripts/count-stats.mjs",
+    "prebuild": "node scripts/count-stats.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"

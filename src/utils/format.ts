@@ -1,3 +1,7 @@
+/** 与 scripts/count-stats.mjs 保持同一套阅读速度。 */
+export const CJK_PER_MIN = 450;
+export const LATIN_PER_MIN = 220;
+
 const DATE_FMT = new Intl.DateTimeFormat('zh-CN', {
   year: 'numeric',
   month: '2-digit',
@@ -23,7 +27,7 @@ export function formatRelative(date: Date | string): string {
 /** 中英混排的粗略阅读时长：中文按字数、西文按词数分别估算。 */
 export function readingTime(body: string | undefined): number {
   if (!body) return 1;
-  const cjk = (body.match(/[\u4e00-\u9fa5]/g) ?? []).length;
+  const cjk = (body.match(/[\u4e00-\u9fff]/g) ?? []).length;
   const words = (body.match(/[A-Za-z0-9]+/g) ?? []).length;
-  return Math.max(1, Math.round(cjk / 450 + words / 220));
+  return Math.max(1, Math.round(cjk / CJK_PER_MIN + words / LATIN_PER_MIN));
 }

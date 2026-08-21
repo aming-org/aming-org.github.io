@@ -24,10 +24,13 @@ pnpm dev        # http://localhost:4321
 其他命令：
 
 ```bash
-pnpm build      # 构建到 dist/
+pnpm stats      # 重新统计字数与阅读时长，写入 src/data/stats.json
+pnpm build      # 先更新统计，再构建到 dist/
 pnpm preview    # 预览构建产物
 pnpm check      # 类型检查
 ```
+
+首页说明里的篇数、总字数和阅读时长来自 `src/data/stats.json`。本地改完文章后跑一次 `pnpm stats` 就能在开发服务器里看到新数字；推到 `main` 后 GitHub Actions 构建前也会自动再统计一遍。草稿（`draft: true`）不计入。
 
 ## 写一篇新短篇
 
@@ -74,6 +77,7 @@ git add . && git commit -m "post: 作品标题" && git push
 src/
 ├── components/          # Header、作品卡片、目录…
 ├── content/posts/       # 短篇（Markdown）
+├── data/stats.json      # 篇数、总字数、阅读时长（pnpm stats 生成）
 ├── layouts/             # BaseLayout（站点框架）、PostLayout（作品页）
 ├── pages/               # 路由：首页、作品、标签、RSS、404
 ├── styles/global.css    # 设计 token 与全局样式

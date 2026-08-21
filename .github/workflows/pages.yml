@@ -25,6 +25,8 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Update story stats
+        run: pnpm stats
       - run: pnpm build
         env:
           SITE: https://aming-org.github.io
