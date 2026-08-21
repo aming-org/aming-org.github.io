@@ -3,7 +3,7 @@ title: 【dvw】这就是本地地标吗
 description: 底特律变人par。神经质奶牛猫v，身价高仿生人w，倒霉996社畜督查组长d，编制三人幸终。
 pubDate: 2026-08-21
 tags: ['dvw', '底特律变人', '弗拉德', '沃尔顿', '戴蒙']
-featured: true
+featured: false
 excerpt: 没有逻辑，跟原作毫无关系，不喜直关。
 ---
 
